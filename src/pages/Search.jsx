@@ -13,6 +13,25 @@ export const Search = () => {
   const [runSearch, setRunSearch] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
 
+  const tabOptions = [
+    {
+      value: 0,
+      label: 'Search',
+    },
+    {
+      value: 1,
+      label: 'Images',
+    },
+    {
+      value: 2,
+      label: 'Videos',
+    },
+    {
+      value: 3,
+      label: 'News',
+    }
+  ];
+
   return (
     <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", py: "10px"}}>
       <Box sx={{display: "flex", flexDirection: "row", justifyContent: "center", width: {sm: "60%", xs: "100%"}, mx: "10px"}}>
@@ -31,29 +50,14 @@ export const Search = () => {
 
       <Box sx={{ borderBottom: 1, borderColor: 'divider', width: "100%", display: "flex", flexDirection: "row", justifyContent: "center", mb: "10px" }}>
         <Tabs value={searchData.page} aria-label="search tabs">
-          <Tab label="Search" value={0} onClick={(ev) => {
-            setRunSearch(true);
-            setIsLoading(true);
-            setSearchData({...searchData, page: 0})
-          }} />
-
-          <Tab label="Images" value={1} onClick={(ev) => {
-            setRunSearch(true);
-            setIsLoading(true);
-            setSearchData({...searchData, page: 1})
-          }} />
-
-          <Tab label="Videos" value={2} onClick={(ev) => {
-            setRunSearch(true);
-            setIsLoading(true);
-            setSearchData({...searchData, page: 2})
-          }} />
-
-          <Tab label="News" value={3} onClick={(ev) => {
-            setRunSearch(true);
-            setIsLoading(true);
-            setSearchData({...searchData, page: 3})
-          }} />
+          {tabOptions.map((entry) => 
+            <Tab key={entry.value} label={entry.label} value={entry.value} onClick={(ev) => {
+              setRunSearch(true);
+              setIsLoading(true);
+              setSearchData({...searchData, page: entry.value})
+            }} />
+          )
+          }
         </Tabs>
       </Box>
 
