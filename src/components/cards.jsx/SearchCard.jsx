@@ -21,7 +21,7 @@ export const SearchCard = ({ data }) => {
         }}
       >
         <Typography
-          variant="h5"
+          variant="h6"
           sx={{
             fontWeight: "bold",
             textDecoration: "underline",

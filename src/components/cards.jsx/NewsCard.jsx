@@ -20,7 +20,14 @@ export const NewsCard = ({ data }) => {
           },
         }}
       >
-        <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+        <Typography
+          variant="h6"
+          sx={{
+            fontWeight: "bold",
+            textDecoration: "underline",
+            color: "#1938d2",
+          }}
+        >
           {data.title}
         </Typography>
         <Typography>{data.summary}</Typography>

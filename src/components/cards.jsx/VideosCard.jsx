@@ -21,7 +21,11 @@ export const VideosCard = ({ data }) => {
       >
         <Typography
           variant="h6"
-          sx={{ fontWeight: "bold", textDecoration: "underline" }}
+          sx={{
+            fontWeight: "bold",
+            textDecoration: "underline",
+            color: "#1938d2",
+          }}
         >
           {data.title}
         </Typography>
