@@ -4,8 +4,8 @@ import { MainPageRouter } from "./routers/MainPageRouter";
 function App() {
   return (
     <div className="App">
-      <CssBaseline/>
-      <MainPageRouter/>
+      <CssBaseline />
+      <MainPageRouter />
     </div>
   );
 }
