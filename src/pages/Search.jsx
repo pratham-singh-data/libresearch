@@ -1,4 +1,4 @@
-import { Avatar, Box, MenuItem, Tab, Tabs, TextField, useMediaQuery } from '@mui/material'
+import { Avatar, Box, MenuItem, Tab, Tabs, TextField, Tooltip, useMediaQuery } from '@mui/material'
 import React, { useContext, useState } from 'react'
 import { Link, Navigate } from 'react-router-dom';
 import LogoIMG from "../assets/logo.png";
@@ -37,7 +37,9 @@ export const Search = () => {
     <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", py: "10px"}}>
       <Box sx={{display: "flex", flexDirection: "row", justifyContent: "center", width: {sm: "60%", xs: "100%"}, mx: "10px"}}>
         <Link to="/home" style={{textDecoration: "none"}}>
-          <Avatar alt="LibreSearch Logo" src={LogoIMG} sx={{width: "10vh", height: "10vh", mb: "10px", mr: "10px"}} />
+          <Tooltip title="Freepik">
+            <Avatar alt="LibreSearch Logo" src={LogoIMG} sx={{width: "10vh", height: "10vh", mb: "10px", mr: "10px"}} />
+          </Tooltip>
         </Link>
         <TextField value={searchData.searchTerm} onKeyDown={(ev) => {
           if(ev.keyCode === 13){
