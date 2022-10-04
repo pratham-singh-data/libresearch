@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/libresearch/static/js/main.772aaf3c.js",
+    "main.js": "/libresearch/static/js/main.4d5d501c.js",
     "static/media/logo.png": "/libresearch/static/media/logo.3cc7ac40a2708e47a15a.png",
     "index.html": "/libresearch/index.html",
-    "main.772aaf3c.js.map": "/libresearch/static/js/main.772aaf3c.js.map"
+    "main.4d5d501c.js.map": "/libresearch/static/js/main.4d5d501c.js.map"
   },
   "entrypoints": [
-    "static/js/main.772aaf3c.js"
+    "static/js/main.4d5d501c.js"
   ]
 }
