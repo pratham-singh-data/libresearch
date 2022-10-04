@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# LibreSearch
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+This is a free and open source search engine that fetches results from the Google Search API from apigeek from RapidAPI
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+1. Full webapp is responsive and built using MaterialUI and React.
 
-### `npm start`
+2. The home page shows the logo of the application and allows you to enter a search query.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. After pressing enter on typing a non-empty string, you will be redirected to the search page where you can select from normal searches, images, videos and news tabs.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4. The search page has an application logo, which upon clicking redirects the user to the homepage, same action occurs on entering an empty string.
 
-### `npm test`
+5. The application features a circular scroller while content is loading and each tab shows by default 15 entries (except the images tab which defaults to 10) and this limit can be exceeded by clicking the "Load More" button which appears as long as there is more data to display.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Attributions
 
-### `npm run build`
+1. `Freepik` : logo.png was obtained from them through flaticon.com. (https://www.flaticon.com/authors/freepik)
+2. `Google Search 3` : This API by apigeek from RapidAPI is used to fetch fetch results. (https://rapidapi.com/apigeek/api/google-search3)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Deployment
+Application is deployed at:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+https://pratham-singh-data.github.io/libresearch/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Source Code
+Source Code is present at:
 
-### `npm run eject`
+https://github.com/pratham-singh-data/libresearch
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contact Details
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Name: Pratham Singh
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+E Mail: PrathamSinghCE@gmail.com
