@@ -1,5 +1,5 @@
 import { Avatar, Box, TextField } from '@mui/material'
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom';
 import LogoIMG from "../assets/logo.png";
 import { DataContext } from '../contexts/DataContext';
@@ -7,6 +7,13 @@ import { DataContext } from '../contexts/DataContext';
 export const Home = () => {
     const {searchData, setSearchData} = useContext(DataContext);
     const [searchEnterred, setSearchEnterred] = useState(false);
+
+    // if searchTerm is empty then set SearchEnterred to false otherwise search will be immediately executed on entry of any charachter
+    useEffect(() => {
+        if(searchData.searchTerm === ""){
+            setSearchEnterred(false);
+        }
+    }, [searchData, searchEnterred]);
 
   return (
     <Box sx={{display: "flex", height: "90vh", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
@@ -21,7 +28,8 @@ export const Home = () => {
             }} placeholder="Search Here..." variant="outlined" sx={{width: "100%"}} />
         </Box>
 
-        {searchEnterred && <Navigate to="/search"/>}
+        {/* navigate to search page only if a search value is enterred */}
+        {searchEnterred && searchData.searchTerm !== "" && <Navigate to="/search"/>}
     </Box>
   )
 }

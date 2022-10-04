@@ -1,3 +1,4 @@
+// data retrieved from RapidAPI
 export const options = {
 	method: 'GET',
 	headers: {

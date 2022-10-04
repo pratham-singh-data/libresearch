@@ -12,8 +12,11 @@ export const Search = () => {
   const {searchData, setSearchData} = useContext(DataContext);
   const [runSearch, setRunSearch] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
+
+  // this will tell when to transition from tabs to options menu
   const alterSelection = useMediaQuery('(max-width:400px)');
 
+  // tabs
   const tabOptions = [
     {
       value: 0,
@@ -36,6 +39,7 @@ export const Search = () => {
   return (
     <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", py: "10px"}}>
       <Box sx={{display: "flex", flexDirection: "row", justifyContent: "center", width: {sm: "60%", xs: "100%"}, mx: "10px"}}>
+        {/* if icon is pressed it redirects to home */}
         <Link to="/home" style={{textDecoration: "none"}}>
           <Tooltip title="Freepik">
             <Avatar alt="LibreSearch Logo" src={LogoIMG} sx={{width: "10vh", height: "10vh", mb: "10px", mr: "10px"}} />
@@ -52,6 +56,7 @@ export const Search = () => {
       </Box>
 
       <Box sx={{ borderBottom: 1, borderColor: 'divider', width: "100%", display: "flex", flexDirection: "row", justifyContent: "center", mb: "10px" }}>
+        {/* tabs */}
         {!alterSelection && 
           <Tabs value={searchData.page} aria-label="search tabs">
             {tabOptions.map((entry) => 
@@ -65,6 +70,7 @@ export const Search = () => {
           </Tabs>
         }
 
+        {/* options menu */}
         {alterSelection &&
           <TextField
             select
@@ -100,6 +106,7 @@ export const Search = () => {
         <NewsScroller runSearch={runSearch} setRunSearch={setRunSearch} isLoading={isLoading} setIsLoading={setIsLoading} />
       }
 
+      {/* if user tries to search nothing redirect to home */}
       {searchData.searchTerm === "" && runSearch &&
         <Navigate to="/"/>
       }

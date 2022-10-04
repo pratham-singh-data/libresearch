@@ -9,6 +9,7 @@ export const MainPageRouter = () => {
     const [searchData, setSearchData] = useState(getSessionData());
 
     useEffect(() => {
+      // once the searchData is alterred save it in session storage
       sessionStorage.setItem("libresearch", JSON.stringify(searchData));
     }, [searchData])
 
@@ -17,6 +18,7 @@ export const MainPageRouter = () => {
         <Routes>
             <Route path="/home" element={<Home/>}/>
             <Route path="/search" element={<Search/>}/>
+            {/* default path */}
             <Route path="*" element={<Navigate to="/home"/>}/>
         </Routes>
     </DataContext.Provider>
