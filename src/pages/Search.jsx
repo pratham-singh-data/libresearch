@@ -1,4 +1,4 @@
-import { Avatar, Box, Tab, Tabs, TextField } from '@mui/material'
+import { Avatar, Box, MenuItem, Tab, Tabs, TextField, useMediaQuery } from '@mui/material'
 import React, { useContext, useState } from 'react'
 import { Link, Navigate } from 'react-router-dom';
 import LogoIMG from "../assets/logo.png";
@@ -12,6 +12,7 @@ export const Search = () => {
   const {searchData, setSearchData} = useContext(DataContext);
   const [runSearch, setRunSearch] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
+  const alterSelection = useMediaQuery('(max-width:400px)');
 
   const tabOptions = [
     {
@@ -49,16 +50,36 @@ export const Search = () => {
       </Box>
 
       <Box sx={{ borderBottom: 1, borderColor: 'divider', width: "100%", display: "flex", flexDirection: "row", justifyContent: "center", mb: "10px" }}>
-        <Tabs value={searchData.page} aria-label="search tabs">
-          {tabOptions.map((entry) => 
-            <Tab key={entry.value} label={entry.label} value={entry.value} onClick={(ev) => {
-              setRunSearch(true);
-              setIsLoading(true);
-              setSearchData({...searchData, page: entry.value})
-            }} />
-          )
-          }
-        </Tabs>
+        {!alterSelection && 
+          <Tabs value={searchData.page} aria-label="search tabs">
+            {tabOptions.map((entry) => 
+              <Tab key={entry.value} label={entry.label} value={entry.value} onClick={(ev) => {
+                setRunSearch(true);
+                setIsLoading(true);
+                setSearchData({...searchData, page: entry.value})
+              }} />
+            )
+            }
+          </Tabs>
+        }
+
+        {alterSelection &&
+          <TextField
+            select
+            value={searchData.page}
+            sx={{mb: "10px"}}
+          >
+            {tabOptions.map((entry) => 
+              <MenuItem key={entry.value} value={entry.value} onClick={(ev) => {
+                setRunSearch(true);
+                setIsLoading(true);
+                setSearchData({...searchData, page: entry.value})
+              }}>
+                {entry.label}
+              </MenuItem>
+            )}
+          </TextField>
+        }
       </Box>
 
       {searchData.page === 0 && 
