@@ -14,13 +14,13 @@ export const NewsScroller = ({runSearch, setRunSearch, isLoading, setIsLoading})
 
   useEffect(() => {
     const worker = async () => {
+      setRunSearch(false);
       setDataLoadingDone(false);
       setDisplaySearchData([]);
       setDisplayLimit(15);
       const data = await executeSearch("news", searchData.searchTerm);
       setDataLoadingDone(true);
       setSearchFullData(data.entries);
-      setRunSearch(false);
     }
 
     if(! runSearch){

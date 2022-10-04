@@ -1,6 +1,6 @@
 import { Avatar, Box, Tab, Tabs, TextField } from '@mui/material'
 import React, { useContext, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import LogoIMG from "../assets/logo.png";
 import { ImageScroller } from '../components/scrollers/ImageScroller';
 import { NewsScroller } from '../components/scrollers/NewsScroller';
@@ -71,6 +71,10 @@ export const Search = () => {
 
       {searchData.page === 3 && 
         <NewsScroller runSearch={runSearch} setRunSearch={setRunSearch} isLoading={isLoading} setIsLoading={setIsLoading} />
+      }
+
+      {searchData.searchTerm === "" && runSearch &&
+        <Navigate to="/"/>
       }
     </Box>
   )

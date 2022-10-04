@@ -14,13 +14,13 @@ export const ImageScroller = ({runSearch, setRunSearch, isLoading, setIsLoading}
   
   useEffect(() => {
     const worker = async () => {
+      setRunSearch(false);
       setDataLoadingDone(false);
       setDisplaySearchData([]);
       setDisplayLimit(10);
       const data = await executeSearch("image", searchData.searchTerm);
       setDataLoadingDone(true);
       setSearchFullData(data.image_results);
-      setRunSearch(false);
     }
 
     if(! runSearch){

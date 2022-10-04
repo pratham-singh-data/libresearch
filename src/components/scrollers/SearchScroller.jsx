@@ -14,13 +14,13 @@ export const SearchScroller = ({runSearch, setRunSearch, isLoading, setIsLoading
 
   useEffect(() => {
     const worker = async () => {
+      setRunSearch(false);
       setDataLoadingDone(false);
       setDisplaySearchData([]);
       setDisplayLimit(15);
       const data = await executeSearch("search", searchData.searchTerm);
       setDataLoadingDone(true);
       setSearchFullData(data.results);
-      setRunSearch(false);
     }
 
     if(! runSearch){
