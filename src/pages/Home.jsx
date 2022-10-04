@@ -58,7 +58,7 @@ export const Home = () => {
 
       {/* navigate to search page only if a search value is enterred */}
       {searchEnterred && searchData.searchTerm !== "" && (
-        <Navigate to="/search" />
+        <Navigate to="/libresearch/search" />
       )}
     </Box>
   );

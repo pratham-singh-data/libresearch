@@ -16,10 +16,13 @@ export const MainPageRouter = () => {
   return (
     <DataContext.Provider value={{ searchData, setSearchData }}>
       <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/search" element={<Search />} />
+        <Route path="/libresearch/home" element={<Home />} />
+        <Route path="/libresearch/search" element={<Search />} />
         {/* default path */}
-        <Route path="*" element={<Navigate to="/home" />} />
+        <Route
+          path="/libresearch/*"
+          element={<Navigate to="/libresearch/home" />}
+        />
       </Routes>
     </DataContext.Provider>
   );

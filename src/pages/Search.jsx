@@ -65,7 +65,7 @@ export const Search = () => {
         }}
       >
         {/* if icon is pressed it redirects to home */}
-        <Link to="/home" style={{ textDecoration: "none" }}>
+        <Link to="/libresearch/home" style={{ textDecoration: "none" }}>
           <Tooltip title="Freepik">
             <Avatar
               alt="LibreSearch Logo"
@@ -177,7 +177,9 @@ export const Search = () => {
       )}
 
       {/* if user tries to search nothing redirect to home */}
-      {searchData.searchTerm === "" && runSearch && <Navigate to="/" />}
+      {searchData.searchTerm === "" && runSearch && (
+        <Navigate to="/libresearch/home" />
+      )}
     </Box>
   );
 };
